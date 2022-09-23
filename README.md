@@ -13,7 +13,6 @@ This should work with all Raspberry Pi devices that support OTG Mode. This means
 
 This will **NOT** work with a Raspberry 2B/2B+/3B/3B+. I have not tested with Raspberry Pi Zero 2.
 
-
 ## Usage 
 
 The `gadget` block is meant to be used alongside other services, so you will need to create a service in your `docker-compose.yml` file.
