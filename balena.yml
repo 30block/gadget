@@ -2,10 +2,11 @@ name: gadget
 description: >-
   Use one cable for powering and communicating with your Raspberry PI device.
   This block sets up your device to work as an USB gadget, which you can access
-  locally via the ethernet address 10.55.0.1. This will *NOT* work with Raspberry Pi 2B/2B+/3B/3B+.
+  locally via the ethernet address 10.55.0.1. This will *NOT* work with
+  Raspberry Pi 2B/2B+/3B/3B+.
 joinable: false
 type: sw.application
-version: 0.1.0
+version: 0.1.1
 assets:
   repository:
     type: blob.asset

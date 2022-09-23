@@ -1,0 +1,22 @@
+- commits:
+    - subject: Fix architecture configuration for docker images
+      hash: a63c50aedcc3a84a171a6e1556116fe8b880e408
+      body: |
+        Minor documentation changes too
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Felipe Lalanne
+      nested: []
+  version: 0.1.1
+  title: ""
+  date: 2022-09-23T22:57:00.272Z
+- version: 0.1.0
+  date: 2022-09-23T21:30:23Z
+  commits:
+    - hash: 2fbef75c6cf06e2135b4b6d6ac83ea97b0b70d89
+      author: Felipe Lalanne
+      footers:
+        change-type: minor
+      subject: Create first version
+      body: null
