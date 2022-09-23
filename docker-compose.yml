@@ -1,0 +1,17 @@
+version: '2.1'
+
+services:
+  gadget:
+    build: ./
+    restart: on-failure
+    # Needed to have access to the host network
+    network_mode: host
+    cap_add:
+      # Needed to load kernel modules
+      - SYS_MODULE
+      # Needed to configure network
+      - NET_ADMIN
+    labels:
+      io.balena.features.kernel-modules: '1'
+      io.balena.features.sysfs: '1'
+
