@@ -2,10 +2,12 @@ name: gadget
 description: >-
   Use one cable for powering and communicating with your Raspberry PI device.
   This block sets up your device to work as an USB gadget, which you can access
-  locally via the ethernet address 10.55.0.1. This will *NOT* work with
+  locally via the ethernet address 10.55.0.1. This will **NOT** work with
   Raspberry Pi 2B/2B+/3B/3B+.
+
+  Raspbperry PI Zero/Zero W is also supported by following the instructions on the repository.
 joinable: false
-type: sw.application
+type: sw.block
 version: 0.1.1
 assets:
   repository:
