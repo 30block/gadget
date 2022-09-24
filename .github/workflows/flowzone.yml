@@ -20,6 +20,4 @@ jobs:
       BALENA_API_KEY: ${{ secrets.BALENA_API_KEY }}
     with:
       docker_images: pipex/gadget
-      balena_slugs: |
-        gh_pipex/gadget-rpi0,
-        gh_pipex/gadget-rpi4
+      balena_slugs: gh_pipex/gadget
