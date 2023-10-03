@@ -1,4 +1,32 @@
 - commits:
+    - subject: Fix docker-bake
+      hash: 73207d16b592c36c0717596e98c1a69f278af6b7
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Felipe Lalanne
+      nested: []
+    - subject: Update flowzone config
+      hash: c01527c5c3a2ada4c6fffee6d1900ad37f1e451c
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Felipe Lalanne
+      nested: []
+    - subject: Fix readme
+      hash: 5a613b247048eca4d626dc3975024232fb53e97c
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Felipe Lalanne
+      nested: []
+  version: 0.1.3
+  title: ""
+  date: 2023-10-03T19:41:46.691Z
+- commits:
     - subject: Rename block
       hash: de80f4e03a9184a68c76a190f2895b3d6c247fa6
       body: ""
