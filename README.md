@@ -38,7 +38,7 @@ services:
         io.balena.features.sysfs: '1'
 ```
 
-The block also needs the device to be configured with the `dwc` [device tree overlay](https://www.balena.io/docs/reference/OS/advanced/#setting-device-tree-overlays-dtoverlay-and-parameters-dtparam) (`dtoverlay`). This can be done by setting the `BALENA_HOST_CONFIG_dtoverlay` variable under [device configuration](https://www.balena.io/docs/learn/manage/configuration/#device-configuration-management) if using the block with a [Balena device](https://www.balena.io) or by modifing [config.txt](https://www.raspberrypi.com/documentation/computers/config_txt.html) if using another OS.
+The block also needs the device to be configured with the `dwc2` [device tree overlay](https://www.balena.io/docs/reference/OS/advanced/#setting-device-tree-overlays-dtoverlay-and-parameters-dtparam) (`dtoverlay`). This can be done by setting the `BALENA_HOST_CONFIG_dtoverlay` variable under [device configuration](https://www.balena.io/docs/learn/manage/configuration/#device-configuration-management) if using the block with a [Balena device](https://www.balena.io) or by modifing [config.txt](https://www.raspberrypi.com/documentation/computers/config_txt.html) if using another OS.
 
 The Raspberry Pi device needs to be connected to a host computer using an [USB On-The-Go cable](https://en.wikipedia.org/wiki/USB_On-The-Go), if using a Pi Zero (W), or a Thunderbolt 3 cable if using a Raspberry Pi 4.
 
