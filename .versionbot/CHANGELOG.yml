@@ -1,4 +1,17 @@
 - commits:
+    - subject: Avoid crash-looping if usb0 does not exist
+      hash: 9087255c8b0461ebe5df03d29ef1da5b61e64807
+      body: |
+        This will now exit cleanly in that case.
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Felipe Lalanne
+      nested: []
+  version: 0.1.4
+  title: ""
+  date: 2023-11-20T17:07:31.713Z
+- commits:
     - subject: Fix docker-bake
       hash: 73207d16b592c36c0717596e98c1a69f278af6b7
       body: ""
