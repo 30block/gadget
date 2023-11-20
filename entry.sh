@@ -73,8 +73,11 @@ setup_usb() {
 
 	# Setup the interface
 	if [ -f "${gadget}/UDC" ] && [ -s "${gadget}/UDC" ]; then
-		ip link set dev usb0 up
-		ip addr add "${GADGET_ADDRESS}/24" dev usb0 || true
+		ip link set dev usb0 up || {
+			echo 'No usb0 interface detected. Terminating ...'
+			exit 0
+		}
+		ip addr add "${GADGET_ADDRESS}/24" dev usb0
 	else
 		echo 'Could not setup usb gadget. Ensure that the device has been configured with dtoverlay="dwc2"'
 		exit 0
