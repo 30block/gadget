@@ -73,6 +73,8 @@ setup_usb() {
 
 	# Setup the interface
 	if [ -f "${gadget}/UDC" ] && [ -s "${gadget}/UDC" ]; then
+		ip addr flush dev usb0 || true
+		ip link set dev usb0 down || true
 		ip link set dev usb0 up || {
 			echo 'No usb0 interface detected. Terminating ...'
 			exit 0
