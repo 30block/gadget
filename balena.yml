@@ -5,10 +5,11 @@ description: >-
   locally via the ethernet address 10.55.0.1. This will **NOT** work with
   Raspberry Pi 2B/2B+/3B/3B+.
 
-  Raspbperry PI Zero/Zero W is also supported by following the instructions on the repository.
+  Raspbperry PI Zero/Zero W is also supported by following the instructions on
+  the repository.
 joinable: false
 type: sw.block
-version: 0.1.4
+version: 0.2.0
 assets:
   repository:
     type: blob.asset

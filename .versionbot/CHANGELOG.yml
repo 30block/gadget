@@ -1,4 +1,26 @@
 - commits:
+    - subject: Bump flowzone
+      hash: 941ae26c1dc434ce6bc8fb82e5f8e0bdaec979f5
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Felipe Lalanne
+      nested: []
+    - subject: Flush and reset the usb0 interface before setup
+      hash: 3445bc0425a2a086a1700e34f74ebf7ff82e1db3
+      body: >
+        This prevents restarts of the service erroring with `RTNETLINK answers:
+        File exists`
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Felipe Lalanne
+      nested: []
+  version: 0.2.0
+  title: ""
+  date: 2024-05-01T20:21:28.136Z
+- commits:
     - subject: Avoid crash-looping if usb0 does not exist
       hash: 9087255c8b0461ebe5df03d29ef1da5b61e64807
       body: |
