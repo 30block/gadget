@@ -23,19 +23,19 @@ version: '2.1'
 services:
   gadget:
     image: pipex/gadget:latest
-      restart: on-failure
-      # Needed to have access to the host network
-      network_mode: host
-      cap_add:
-        # Needed to load kernel modules
-        - SYS_MODULE
-        # Needed to configure network
-        - NET_ADMIN
-      labels:
-        # Needed for access to the host `/lib/modules` directory
-        io.balena.features.kernel-modules: '1'
-        # Needed for access to the host `/sys` directory
-        io.balena.features.sysfs: '1'
+    restart: on-failure
+    # Needed to have access to the host network
+    network_mode: host
+    cap_add:
+      # Needed to load kernel modules
+      - SYS_MODULE
+      # Needed to configure network
+      - NET_ADMIN
+    labels:
+      # Needed for access to the host `/lib/modules` directory
+      io.balena.features.kernel-modules: '1'
+      # Needed for access to the host `/sys` directory
+      io.balena.features.sysfs: '1'
 ```
 
 The block also needs the device to be configured with the `dwc2` [device tree overlay](https://www.balena.io/docs/reference/OS/advanced/#setting-device-tree-overlays-dtoverlay-and-parameters-dtparam) (`dtoverlay`). This can be done by setting the `BALENA_HOST_CONFIG_dtoverlay` variable under [device configuration](https://www.balena.io/docs/learn/manage/configuration/#device-configuration-management) if using the block with a [Balena device](https://www.balena.io) or by modifing [config.txt](https://www.raspberrypi.com/documentation/computers/config_txt.html) if using another OS.
