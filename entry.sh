@@ -1,16 +1,21 @@
 #!/bin/sh
 
-set -e
+set -ex
 
 load_modules() {
-	modprobe -a dwc2 g_ether
+	modprobe dwc2
+	modprobe g_ether
 }
 
 GADGET_ADDRESS=${GADGET_ADDRESS:-"10.55.0.1"}
 addr_prefix=${GADGET_ADDRESS%.*}
 
 setup_usb() {
-	gadget=/sys/kernel/config/usb_gadget/rpi
+	gadget=/sys/kernel/config/usb_gadget/usb0
+	serial="$(grep Serial /proc/cpuinfo | grep -o -P '.{0,12}$')"
+	mac="$(echo "${serial}" | sed 's/\(\w\w\)/:\1/g' | cut -b 2-)"
+	udc="$(ls /sys/class/udc/ | awk '{print $1}')"
+
 	if [ ! -f "${gadget}/UDC" ] || [ ! -s "${gadget}/UDC" ]; then
 		mkdir -p "${gadget}"
 		cd "${gadget}"
@@ -31,13 +36,13 @@ setup_usb() {
 		# Gadget manufacturer details in english (0x409)
 		mkdir -p strings/0x409
 		echo "Me" >strings/0x409/manufacturer
-		echo "Raspberry-Pi USB Gadget" >strings/0x409/product
-		echo "fedcba9876543211" >strings/0x409/serialnumber
+		echo "USB Ethernet Gadget" >strings/0x409/product
+		echo "${serial}" >strings/0x409/serialnumber
 
 		# Gadget configuration
 		mkdir -p configs/c.1
 		echo "0x80" >configs/c.1/bmAttributes # Bus powered
-		echo "250" >configs/c.1/MaxPower
+		echo "500" >configs/c.1/MaxPower
 		mkdir -p configs/c.1/strings/0x409
 		echo "RNDIS" >configs/c.1/strings/0x409/configuration # Configuration name
 
@@ -49,9 +54,8 @@ setup_usb() {
 
 		# Gadget functions
 		mkdir -p functions/rndis.usb0
-		mac="01:23:45:67:89:ab"
-		dev_mac="02$(echo ${mac} | cut -b 3-)"
-		host_mac="12$(echo ${mac} | cut -b 3-)"
+		dev_mac="02$(echo "${mac}" | cut -b 3-)"
+		host_mac="12$(echo "${mac}" | cut -b 3-)"
 		echo "${dev_mac}" >functions/rndis.usb0/dev_addr
 		echo "${host_mac}" >functions/rndis.usb0/host_addr
 		echo "RNDIS" >functions/rndis.usb0/os_desc/interface.rndis/compatible_id       # matches Windows RNDIS Drivers
@@ -65,7 +69,7 @@ setup_usb() {
 		set -e
 
 		# Enable the gadget
-		ls /sys/class/udc >${gadget}/UDC
+		echo "${udc}" >${gadget}/UDC
 
 		# Wait for devices to be created
 		udevadm settle -t 5 || :

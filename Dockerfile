@@ -1,6 +1,6 @@
 FROM alpine
 
-RUN apk add --update --no-cache eudev dnsmasq && \
+RUN apk add --update --no-cache eudev dnsmasq grep && \
   echo 'libcomposite' >> /etc/modules
 
 COPY entry.sh .
