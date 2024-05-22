@@ -1,4 +1,18 @@
 - commits:
+    - subject: Make the Gadget setup more generic
+      hash: 845f4c3a8e24da7e2e803d7cd0159c6cbdc3241f
+      body: |
+        This updates the entry script to remove references to raspberry pi and
+        potentialy make it work with any g_ether compatible device.
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Felipe Lalanne
+      nested: []
+  version: 0.3.0
+  title: ""
+  date: 2024-05-22T22:20:55.164Z
+- commits:
     - subject: Bump flowzone
       hash: 941ae26c1dc434ce6bc8fb82e5f8e0bdaec979f5
       body: ""
