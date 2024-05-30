@@ -1,4 +1,18 @@
 - commits:
+    - subject: Disable script debugging by default
+      hash: dab5982577b72d836ff2ae57b2b6ccdbfdec5dc3
+      body: |
+        Script debugging got left as on by default, this reverts that and
+        updates the debug variable name to GADGET_DEBUG
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Felipe Lalanne
+      nested: []
+  version: 0.4.0
+  title: ""
+  date: 2024-05-30T19:52:09.627Z
+- commits:
     - subject: Make the Gadget setup more generic
       hash: 845f4c3a8e24da7e2e803d7cd0159c6cbdc3241f
       body: |
