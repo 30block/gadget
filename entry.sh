@@ -1,6 +1,10 @@
 #!/bin/sh
 
-set -ex
+set -e
+
+if [ -n "$GADGET_DEBUG" ]; then
+	set -x
+fi
 
 load_modules() {
 	modprobe dwc2
