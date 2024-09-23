@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update flowzone to v17.4.39
+      hash: e4e818a2ce1a23a972e141e45a4db5da6a83cc5c
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Felipe Lalanne
+      nested: []
+  version: 0.4.1
+  title: ""
+  date: 2024-09-23T20:09:13.160Z
+- commits:
     - subject: Disable script debugging by default
       hash: dab5982577b72d836ff2ae57b2b6ccdbfdec5dc3
       body: |
