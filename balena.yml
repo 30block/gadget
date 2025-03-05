@@ -9,7 +9,7 @@ description: >-
   the repository.
 joinable: false
 type: sw.block
-version: 0.4.1
+version: 0.4.2
 assets:
   repository:
     type: blob.asset

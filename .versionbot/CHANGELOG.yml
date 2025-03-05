@@ -1,4 +1,16 @@
 - commits:
+    - subject: Add kmod to modules
+      hash: 90b9d13965a5458dac814682e3f41de8ac3ac6d0
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Felipe Lalanne
+      nested: []
+  version: 0.4.2
+  title: ""
+  date: 2025-03-05T23:31:05.542Z
+- commits:
     - subject: Update flowzone to v17.4.39
       hash: e4e818a2ce1a23a972e141e45a4db5da6a83cc5c
       body: ""
